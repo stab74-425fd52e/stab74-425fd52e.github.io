@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花都影视网 - 热播剧集与电影片单精选</title>
+  <meta name="description" content="花都影视网汇聚2026年11月热播剧集、电影片单与深度解析，提供《长安十二时辰·续》《雾中灯塔》等条目看点、评分与更新动态，适合追剧用户与影迷查阅。">
+  <meta name="keywords" content="花都影视网">
+  <style>
+    /* ---------- 设计系统 ---------- */
+    :root {
+      --primary: #D94F2B;
+      --primary-light: #F07A4A;
+      --primary-dark: #A83418;
+      --bg: #FDF8F5;
+      --surface: #FFFFFF;
+      --text-primary: #1E1A18;
+      --text-secondary: #5C4E48;
+      --text-tertiary: #8B7A72;
+      --divider: #EADFD9;
+      --card-radius: 16px;
+      --btn-radius: 40px;
+      --tag-radius: 100px;
+      --shadow-default: 0 2px 12px rgba(0,0,0,0.04), 0 4px 24px rgba(0,0,0,0.02);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.10);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --announce-h: 44px;
+      --header-h: 68px;
+      --sticky-offset: calc(var(--announce-h) + var(--header-h));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: var(--sticky-offset);
+    }
+
+    /* ---------- 吸顶区域 ---------- */
+    .announce-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--announce-h);
+      background: var(--primary-dark);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 20px;
+      font-size: 0.82rem;
+      z-index: 100;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .announce-bar .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+    .announce-bar .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .announce-bar .announce-date {
+      background: rgba(255,255,255,0.18);
+      padding: 2px 8px;
+      border-radius: var(--tag-radius);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .announce-bar .announce-dot {
+      width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4);
+    }
+
+    .main-header {
+      position: fixed;
+      top: var(--announce-h);
+      left: 0;
+      right: 0;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 99;
+      gap: 16px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .logo-graphic {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      display: block;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--tag-radius);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      background: var(--primary-light);
+      color: #FFF;
+      outline: none;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #F5EFEB;
+      border-radius: var(--btn-radius);
+      padding: 4px 6px 4px 14px;
+      border: 1px solid transparent;
+      transition: border 0.2s;
+    }
+    .search-box:focus-within {
+      border-color: var(--primary);
+      background: #FFF;
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 0.82rem;
+      width: 110px;
+      outline: none;
+      font-family: inherit;
+      color: var(--text-primary);
+    }
+    .search-box input::placeholder { color: var(--text-tertiary); }
+    .search-box button {
+      background: var(--primary);
+      border: none;
+      color: #FFF;
+      padding: 6px 12px;
+      border-radius: var(--btn-radius);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .search-box button:hover { background: var(--primary-dark); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--divider);
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    /* 移动端抽屉 */
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 200;
+      top: var(--sticky-offset);
+    }
+    .mobile-menu-overlay.active { display: block; }
+    .mobile-menu-panel {
+      display: none;
+      position: fixed;
+      top: var(--sticky-offset);
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      z-index: 201;
+      padding: 16px 20px 24px;
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      max-height: calc(100vh - var(--sticky-offset));
+      overflow-y: auto;
+    }
+    .mobile-menu-panel.active { display: block; }
+    .mobile-menu-panel a {
+      display: block;
+      padding: 10px 8px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--divider);
+    }
+    .mobile-menu-panel a:last-of-type { border-bottom: none; }
+    .mobile-menu-panel .close-btn {
+      display: block;
+      margin-top: 12px;
+      width: 100%;
+      padding: 10px;
+      background: var(--primary);
+      color: #FFF;
+      border: none;
+      border-radius: var(--btn-radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ---------- 容器 ---------- */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      background: linear-gradient(145deg, #2B1B14 0%, #4A2C1E 40%, #A83418 100%);
+      border-radius: 0 0 32px 32px;
+      margin: 0 24px;
+      padding: 52px 48px 48px;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,122,74,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--tag-radius);
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-actions a {
+      display: inline-block;
+      padding: 10px 26px;
+      border-radius: var(--btn-radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-actions .btn-primary {
+      background: var(--primary-light);
+      color: #FFF;
+      box-shadow: 0 4px 16px rgba(217,79,43,0.35);
+    }
+    .hero-actions .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(217,79,43,0.45);
+    }
+    .hero-actions .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      color: #FFF;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-actions .btn-ghost:hover {
+      background: rgba(255,255,255,0.16);
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      opacity: 0.9;
+    }
+    .hero-visual .poster-card {
+      width: 110px;
+      height: 158px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero-visual .poster-card:nth-child(2) {
+      animation-delay: 0.6s;
+      margin-bottom: 24px;
+    }
+    .hero-visual .poster-card:nth-child(3) {
+      animation-delay: 1.2s;
+      margin-bottom: 48px;
+    }
+    .hero-visual .poster-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual .poster-card { animation: none; }
+    }
+
+    /* ---------- 三栏布局 ---------- */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      margin-top: 36px;
+      margin-bottom: 48px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 20px 16px;
+      box-shadow: var(--shadow-default);
+    }
+    .channel-index h3 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .channel-index ul {
+      list-style: none;
+    }
+    .channel-index li {
+      margin-bottom: 4px;
+    }
+    .channel-index a {
+      display: block;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .channel-index a:hover,
+    .channel-index a:focus-visible,
+    .channel-index a.active {
+      background: #FDF0EA;
+      color: var(--primary-dark);
+      font-weight: 600;
+      outline: none;
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      min-width: 0;
+    }
+
+    /* 右辅助栏 */
+    .side-aux {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .aux-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .aux-card h3 .aux-dot {
+      width: 4px; height: 16px; border-radius: 4px; background: var(--primary); display: inline-block;
+    }
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hot-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+    }
+    .hot-list .rank {
+      font-weight: 800;
+      color: var(--primary);
+      min-width: 20px;
+      font-size: 0.9rem;
+    }
+    .hot-list .hot-title {
+      color: var(--text-primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .hot-list .hot-title:hover { color: var(--primary); }
+    .hot-list .hot-meta {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      display: block;
+    }
+
+    .update-ticker {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .update-ticker li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.82rem;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--divider);
+    }
+    .update-ticker li:last-child { border-bottom: none; padding-bottom: 0; }
+    .update-ticker .ticker-name {
+      color: var(--text-primary);
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 150px;
+    }
+    .update-ticker .ticker-time {
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+
+    /* ---------- 板块通用 ---------- */
+    .section-block {
+      background: var(--surface);
+      border-radius: var(--card-radius);
+      padding: 28px 26px;
+      box-shadow: var(--shadow-default);
+    }
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title .title-accent {
+      width: 5px; height: 22px; border-radius: 4px; background: var(--primary); display: inline-block; flex-shrink: 0;
+    }
+    .section-sub {
+      font-size: 0.84rem;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .content-card {
+      border: 1px solid var(--divider);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #F0E8E3;
+      overflow: hidden;
+    }
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+    .content-card:hover .card-thumb img {
+      transform: scale(1.04);
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .tag {
+      display: inline-block;
+      background: #FDF0EA;
+      color: var(--primary-dark);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: var(--tag-radius);
+      white-space: nowrap;
+    }
+    .tag.muted {
+      background: #F5F0ED;
+      color: var(--text-tertiary);
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.35;
+      color: var(--text-primary);
+    }
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+    }
+    .card-meta .heat {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .compact-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--divider);
+      font-size: 0.88rem;
+    }
+    .compact-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .compact-list .list-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .compact-list .list-title:hover { color: var(--primary); }
+    .compact-list .list-desc {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .compact-list .list-date {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 8px;
+      background: #FAF4F0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .category-item:hover {
+      background: var(--primary);
+      color: #FFF;
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .deep-dive ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .deep-dive ul li { margin-bottom: 6px; }
+    .deep-dive blockquote {
+      background: #FAF4F0;
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-list details {
+      background: #FAF7F5;
+      border-radius: 12px;
+      padding: 4px 18px;
+      border: 1px solid var(--divider);
+      transition: background 0.2s;
+    }
+    .faq-list details[open] {
+      background: #FFF;
+      border-color: var(--primary-light);
+    }
+    .faq-list summary {
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after {
+      content: '−';
+    }
+    .faq-list .faq-answer {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-bottom: 14px;
+      padding-right: 16px;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: #FAF7F5;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--divider);
+    }
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .comment-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #E8D9D1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+    .comment-nick {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .comment-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .news-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .news-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .news-date {
+      font-size: 0.72rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+      background: #FDF0EA;
+      padding: 2px 10px;
+      border-radius: var(--tag-radius);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .news-body { flex: 1; }
+    .news-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .news-summary {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* 相关推荐标签索引 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag-index a {
+      display: inline-block;
+      padding: 6px 16px;
+      background: #FAF4F0;
+      border-radius: var(--tag-radius);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      border: 1px solid transparent;
+    }
+    .tag-index a:hover {
+      background: var(--primary);
+      color: #FFF;
+    }
+
+    /* 补充板块：时间线 */
+    .timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--divider);
+      border-radius: 2px;
+    }
+    .timeline li {
+      position: relative;
+      margin-bottom: 18px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--surface);
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+    .timeline li:last-child { margin-bottom: 0; }
+    .timeline .tl-date {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* 投稿互动区 */
+    .interact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .interact-card {
+      background: #FAF7F5;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px dashed var(--divider);
+    }
+    .interact-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .interact-card p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .interact-card .btn-sm {
+      display: inline-block;
+      padding: 6px 20px;
+      background: var(--primary);
+      color: #FFF;
+      border-radius: var(--btn-radius);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .interact-card .btn-sm:hover { background: var(--primary-dark); }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2B1B14;
+      color: rgba(255,255,255,0.7);
+      padding: 48px 24px 32px;
+      margin-top: 24px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand .footer-logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFF;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-brand p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+    }
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #FFF; }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 搜索无结果提示 */
+    .search-no-result {
+      display: none;
+      padding: 16px;
+      background: #FDF0EA;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      color: var(--primary-dark);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .search-no-result.active { display: block; }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFF;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(217,79,43,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      transform: translateY(-2px);
+      background: var(--primary-dark);
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .portal-layout {
+        grid-template-columns: 1fr 260px;
+        gap: 24px;
+      }
+      .channel-index { display: none; }
+      .hero {
+        padding: 40px 32px;
+      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-visual .poster-card:nth-child(3) { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 740px) {
+      .portal-layout {
+        grid-template-columns: 1fr;
+      }
+      .side-aux {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .hero {
+        flex-direction: column;
+        padding: 32px 24px;
+        margin: 0 12px;
+        min-height: auto;
+      }
+      .hero h1 { font-size: 1.9rem; }
+      .hero-visual { display: none; }
+      .header-nav { display: none; }
+      .hamburger { display: block; }
+      .search-box input { width: 70px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .interact-panel { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .comment-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 16px; }
+      .section-block { padding: 20px 18px; }
+      .back-to-top { bottom: 18px; right: 18px; width: 38px; height: 38px; }
+      .announce-bar { font-size: 0.72rem; gap: 8px; padding: 0 12px; }
+      .announce-bar .announce-brand { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .side-aux { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 1.6rem; }
+      .search-box input { width: 50px; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner" aria-label="站内公告">
+    <span class="announce-brand">花都影视网</span>
+    <span class="announce-item">
+      <span class="announce-date">11月8日</span>
+      <span>《雾中灯塔》第8集上线</span>
+    </span>
+    <span class="announce-dot"></span>
+    <span class="announce-item">
+      <span class="announce-date">11月7日</span>
+      <span>「冬季片单」新增12部</span>
+    </span>
+    <span class="announce-dot"></span>
+    <span class="announce-item">
+      <span class="announce-date">11月6日</span>
+      <span>《长安十二时辰·续》评分8.9</span>
+    </span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="main-header">
+    <div class="header-left">
+      <div class="logo-graphic" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="2" y="2" width="32" height="32" rx="8" fill="#D94F2B"/>
+          <path d="M10 12L16 18L10 24" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 12L24 18L18 24" stroke="#F07A4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="10" r="2" fill="#FFF"/>
+        </svg>
+      </div>
+      <span class="logo-text">花都影视网</span>
+    </div>
+    <nav class="header-nav" aria-label="主导航">
+      <a href="#hot-series">热播剧集</a>
+      <a href="#movie-picks">电影精选</a>
+      <a href="#deep-analysis">深度解析</a>
+      <a href="#faq">常见问题</a>
+      <a href="#comments">用户评论</a>
+      <a href="#news">相关资讯</a>
+      <a href="#interact">投稿互动</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" role="search">
+        <input type="text" id="searchInput" placeholder="搜索剧集或电影…" aria-label="搜索剧集或电影">
+        <button id="searchBtn" type="button">查找</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu-panel" id="mobilePanel" role="dialog" aria-label="移动端导航菜单">
+    <a href="#hot-series">热播剧集</a>
+    <a href="#movie-picks">电影精选</a>
+    <a href="#deep-analysis">深度解析</a>
+    <a href="#faq">常见问题</a>
+    <a href="#comments">用户评论</a>
+    <a href="#news">相关资讯</a>
+    <a href="#interact">投稿互动</a>
+    <button class="close-btn" id="closeMenuBtn">关闭菜单</button>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero" aria-label="首屏推荐">
+    <div class="hero-content">
+      <span class="hero-badge">2026 冬季片单 · 每日更新</span>
+      <h1>花都影视网</h1>
+      <p class="hero-desc">聚合热播剧集、高分电影与深度片单解析，提供《长安十二时辰·续》《雾中灯塔》《北方往事》等条目的更新动态、评分与看点，为追剧用户和影迷提供可查阅的影视内容索引。</p>
+      <div class="hero-actions">
+        <a href="#hot-series" class="btn-primary">浏览热播剧集</a>
+        <a href="#deep-analysis" class="btn-ghost">查看深度解析</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="poster-card">
+        <img src="https://picsum.photos/seed/ca12/400/600" alt="《长安十二时辰·续》海报" width="400" height="600" loading="lazy">
+      </div>
+      <div class="poster-card">
+        <img src="https://picsum.photos/seed/wuzhong/400/600" alt="《雾中灯塔》海报" width="400" height="600" loading="lazy">
+      </div>
+      <div class="poster-card">
+        <img src="https://picsum.photos/seed/beifang/400/600" alt="《北方往事》海报" width="400" height="600" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏主体 -->
+  <div class="container">
+    <div class="portal-layout">
+
+      <!-- 左频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <h3>频道导航</h3>
+        <ul>
+          <li><a href="#hot-series" class="active">热播剧集</a></li>
+          <li><a href="#movie-picks">电影精选</a></li>
+          <li><a href="#latest-updates">最新更新</a></li>
+          <li><a href="#category-entry">分类入口</a></li>
+          <li><a href="#deep-analysis">深度解析</a></li>
+          <li><a href="#guide">体验指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#comments">用户评论</a></li>
+          <li><a href="#news">相关资讯</a></li>
+          <li><a href="#related-recommend">相关推荐</a></li>
+          <li><a href="#timeline">播出时间线</a></li>
+          <li><a href="#interact">投稿互动</a></li>
+        </ul>
+      </aside>
+
+      <!-- 中间主内容 -->
+      <main class="main-content" id="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section class="section-block" id="overview">
+          <h2 class="section-title"><span class="title-accent"></span>影视内容领域概览</h2>
+          <p style="font-size:0.9rem;line-height:1.8;color:var(--text-secondary);">
+            剧集与电影的内容形态在2026年11月呈现出几个清晰方向：古装悬疑持续占据热度高位，《长安十二时辰·续》以48集篇幅在11月6日上线第12集，豆瓣开分8.9；都市情感剧《雾中灯塔》走短剧路线，单集35分钟，每周三、周六更新，目前播至第8集；文艺片《北方往事》在平遥影展首映后定档11月20日院线，流媒体窗口预计2027年1月。网络电影方面，腾讯视频与爱奇艺在11月第一周共上线7部新片，其中《暗涌》《铁西区》两部进入平台热度榜前五。纪录片赛道，《大地之上》第二季于11月2日收官，B站播放量累计4700万。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;color:var(--text-secondary);margin-top:12px;">
+            从观众侧看，类型混搭成为新常态——悬疑加家庭伦理、科幻加喜剧的条目数量比去年同期增加三成。平台排播上，爱奇艺「迷雾剧场」12月将回归，优酷「悬疑剧场」已公布5部片单。海外剧方面，Netflix《怪奇物语》最终季上半部11月1日上线，Disney+《洛基》第三季确认2027年春季。这些内容散布在不同平台，更新节奏各异，观众需要一份可对照的条目清单来安排追看顺序。
+          </p>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section-block" id="hot-series">
+          <h2 class="section-title"><span class="title-accent"></span>热播剧集与电影精选</h2>
+          <p class="section-sub">基于2026年11月8日各平台热度与评分筛选</p>
+          <div class="card-grid" id="cardGrid">
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/changan2/400/300" alt="《长安十二时辰·续》剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">古装悬疑</span>
+                  <span class="tag muted">48集</span>
+                  <span class="tag muted">更新至12集</span>
+                </div>
+                <h3 class="card-title">长安十二时辰·续</h3>
+                <p class="card-desc">承接第一季结局，张小敬重返长安调查盐铁走私案。第12集“火闹钟”单集弹幕量破42万，雷佳音与周一围的对手戏被截图传播最广。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 9862</span>
+                  <span>豆瓣 8.9</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/wudeng/400/300" alt="《雾中灯塔》剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">都市情感</span>
+                  <span class="tag muted">短剧</span>
+                  <span class="tag muted">每周三六更新</span>
+                </div>
+                <h3 class="card-title">雾中灯塔</h3>
+                <p class="card-desc">青岛取景的12集短剧，讲一对离婚夫妻因孩子升学被迫同住。第8集“家长会”一段7分钟长镜头被剪辑号反复拆解，B站二创播放量破90万。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 8734</span>
+                  <span>豆瓣 8.2</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/beifang2/400/300" alt="《北方往事》剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">文艺剧情</span>
+                  <span class="tag muted">院线待映</span>
+                  <span class="tag muted">11月20日</span>
+                </div>
+                <h3 class="card-title">北方往事</h3>
+                <p class="card-desc">平遥影展最佳影片，东北工业区三代人的迁徙史。全片用16mm胶片拍摄，11月20日院线上映，点映场已开，猫眼想看人数4.2万。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 6210</span>
+                  <span>点映 8.7</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/anyong/400/300" alt="《暗涌》剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">犯罪悬疑</span>
+                  <span class="tag muted">网络电影</span>
+                  <span class="tag muted">腾讯视频</span>
+                </div>
+                <h3 class="card-title">暗涌</h3>
+                <p class="card-desc">沿海小城缉私案改编，11月3日上线。开场8分钟海上追逐戏用了一镜到底，制片方在采访中透露拍摄时动用了三艘渔政船配合。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 7145</span>
+                  <span>平台 8.1</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/tiexi/400/300" alt="《铁西区》剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">现实题材</span>
+                  <span class="tag muted">爱奇艺</span>
+                  <span class="tag muted">11月5日上线</span>
+                </div>
+                <h3 class="card-title">铁西区</h3>
+                <p class="card-desc">以沈阳铁西区老厂房拆迁为背景，三个下岗工人合伙开烧烤店的故事。导演王小帅监制，主演王景春，第4集有场雪夜戏拍了11天。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 6588</span>
+                  <span>豆瓣 7.8</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card">
+              <div class="card-thumb">
+                <img src="https://picsum.photos/seed/dadizhishang/400/300" alt="《大地之上》第二季剧照" width="400" height="300" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag">纪录片</span>
+                  <span class="tag muted">B站</span>
+                  <span class="tag muted">已完结</span>
+                </div>
+                <h3 class="card-title">大地之上 第二季</h3>
+                <p class="card-desc">11月2日收官，最后一集讲云南咖啡农的合作社。全季B站播放量4700万，弹幕里讨论最多的是第三集怒江溜索改桥的段落。</p>
+                <div class="card-meta">
+                  <span class="heat">热度 5230</span>
+                  <span>B站 9.3</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="search-no-result" id="searchNoResult">没有找到匹配的条目，试试“长安”“雾中”或“北方”。</div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section class="section-block" id="latest-updates">
+          <h2 class="section-title"><span class="title-accent"></span>最新更新与热播动态</h2>
+          <ul class="compact-list">
+            <li>
+              <a href="#" class="list-title">长安十二时辰·续 第12集</a>
+              <span class="list-desc">张小敬查获私盐账本，龙波现身西市。</span>
+              <span class="list-date">11月8日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">雾中灯塔 第8集</a>
+              <span class="list-desc">家长会冲突升级，女儿选择跟父亲住。</span>
+              <span class="list-date">11月8日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">暗涌</a>
+              <span class="list-desc">上线第5天，平台热度值破7000。</span>
+              <span class="list-date">11月7日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">铁西区 第6集</a>
+              <span class="list-desc">烧烤店遭投诉油烟，三人凑钱装净化器。</span>
+              <span class="list-date">11月7日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">怪奇物语 最终季上半部</a>
+              <span class="list-desc">Netflix 11月1日一次性放出5集。</span>
+              <span class="list-date">11月6日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">北方往事 点映场</a>
+              <span class="list-desc">11月6日北京、沈阳点映，猫眼评分8.7。</span>
+              <span class="list-date">11月6日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">大地之上 第二季 收官集</a>
+              <span class="list-desc">云南咖啡农合作社年营收破800万。</span>
+              <span class="list-date">11月5日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">洛基 第三季</a>
+              <span class="list-desc">Disney+确认2027年春季上线，首张剧照放出。</span>
+              <span class="list-date">11月4日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">迷雾剧场 12月片单</a>
+              <span class="list-desc">爱奇艺公布《回响》《深渊》两部新剧。</span>
+              <span class="list-date">11月3日</span>
+            </li>
+            <li>
+              <a href="#" class="list-title">优酷悬疑剧场</a>
+              <span class="list-desc">5部片单公布，含《沉默的证明2》。</span>
+              <span class="list-date">11月2日</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section-block" id="category-entry">
+          <h2 class="section-title"><span class="title-accent"></span>分类入口</h2>
+          <div class="category-grid">
+            <a href="#" class="category-item">古装悬疑</a>
+            <a href="#" class="category-item">都市情感</a>
+            <a href="#" class="category-item">犯罪悬疑</a>
+            <a href="#" class="category-item">现实题材</a>
+            <a href="#" class="category-item">文艺剧情</a>
+            <a href="#" class="category-item">纪录片</a>
+            <a href="#" class="category-item">网络电影</a>
+            <a href="#" class="category-item">海外剧</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section class="section-block deep-dive" id="deep-analysis">
+          <h2 class="section-title"><span class="title-accent"></span>深度解析：古装悬疑与都市短剧的叙事差异</h2>
+          <h3>一、单集时长与信息释放节奏</h3>
+          <p>《长安十二时辰·续》单集45分钟，每集至少推进两条线索：一条主线查案，一条副线交代朝堂动向。第12集用一场7分钟的西市追逐戏完成三组人物汇合，信息密度靠场景调度而非台词。对比《雾中灯塔》，单集35分钟，一集只解决一个生活矛盾——第8集“家长会”全在讲女儿跟谁住，没有副线。两种节奏对应两种观看场景：前者适合连续刷，后者适合下饭看。</p>
+          <p>从数据看，古装悬疑剧的弃剧率集中在第3—5集，如果前五集没有建立清晰的案件推进感，观众流失明显。《长安十二时辰·续》第3集就抛出盐铁走私案的核心证据，第5集让反派露脸，这个排布比第一季提前了整整两集。</p>
+          <h3>二、演员搭配与角色可信度</h3>
+          <p>雷佳音演张小敬，优势在于疲惫感——一个查了十几年案子的老吏，身上那股“不想干了但还得干”的劲，观众认。周一围演的龙波，前12集只有四场戏，每场不超过3分钟，但弹幕讨论量已经超过主角。这种“少而重”的配角用法，比给反派加戏更有效。反观《雾中灯塔》，主演王鸥和张鲁一的搭配靠的是生活流默契，两人在厨房做饭那场戏没有台词，全靠动作节奏，豆瓣短评里被顶到最高的就是这条。</p>
+          <h3>三、制作规格与类型预期的错位</h3>
+          <p>网络电影《暗涌》投资据制片方在11月5日媒体看片会上透露是1800万，其中海上追逐戏占预算三成。这一定位让它在犯罪类型里有了院线级的视觉，但剧本逻辑的粗糙也被放大——豆瓣短评里“画面9分剧本5分”的句式反复出现。同档期《铁西区》相反，制作成本不到1000万，靠王景春和三个素人演员的表演撑住，第4集雪夜戏拍了11天，导演在采访里说“冷得机器都罢工”。两部片子的口碑分岔说明一件事：网络电影观众对“视觉奇观”的容忍度在降低，对“演得真”的需求在上升。</p>
+          <blockquote>
+            一个可核对的判断：在11月第一周上线的7部网络电影里，豆瓣评分过7的只有《铁西区》一部，而它的制作成本排倒数第二。这并不能证明“低成本一定好”，但能说明剧本和表演的权重在上升。
+          </blockquote>
+          <h3>四、平台排播对观看选择的影响</h3>
+          <p>爱奇艺「迷雾剧场」12月回归的消息在11月3日公布，优酷「悬疑剧场」11月2日放出5部片单。两个平台都把悬疑作为Q4重点，但排播策略不同：迷雾剧场走“一周双更、四周完结”的短周期，优酷则让《沉默的证明2》拉长到六周。对观众来说，追剧时间成本不一样——想快速看完的人会优先选迷雾剧场，想每周有固定讨论话题的人更适合优酷的节奏。这种排播差异直接影响社交平台的讨论热度曲线：短周期剧在完结后一周内讨论量断崖，长周期剧的讨论能维持到播出结束。</p>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section class="section-block" id="guide">
+          <h2 class="section-title"><span class="title-accent"></span>体验指南：剧集与电影的消费路径</h2>
+          <p style="font-size:0.9rem;line-height:1.8;color:var(--text-secondary);">
+            追一部剧之前，先看三样东西：集数、更新频率、前两集的口碑走势。48集的古装悬疑和12集的短剧，投入的时间差了好几倍。以《长安十二时辰·续》为例，每周四、周日各更新两集，目前播到12集，现在入坑意味着要跟播到12月底；《雾中灯塔》每周三、六各一集，12集全播完要到12月中旬，适合不想等太久的人。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;color:var(--text-secondary);margin-top:12px;">
+            判断一个条目值不值得看，豆瓣开分时间是个参考——开分越早、评分人数越多，说明平台对内容越有信心。《长安十二时辰·续》上线当天开分8.9，评分人数破3万；《铁西区》上线第三天才开分，7.8分，评分人数1.2万。不是分数低就一定差，但开分晚的剧通常需要更多时间积累口碑。网络电影看平台热度值的变化曲线：上线首日冲高然后快速回落的，多半是营销驱动；持续爬升的，比如《暗涌》上线五天热度从5200涨到7145，说明有自然流量进入。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;color:var(--text-secondary);margin-top:12px;">
+            院线片和流媒体片的比较要看窗口期。《北方往事》11月20日院线上映，流媒体预计2027年1月上线，中间隔了将近两个月。想早看就进影院，不急就等窗口期。文艺片的排片通常集中在首周，错过首周可能只剩早场。纪录片没有窗口期问题，《大地之上》第二季在B站全集上线，随时可以看，但弹幕氛围会随着时间变淡——刚完结那几天弹幕最密，讨论质量也最高。
+          </p>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section-block" id="faq">
+          <h2 class="section-title"><span class="title-accent"></span>常见问题</h2>
+          <div class="faq-list">
+            <details>
+              <summary>《长安十二时辰·续》一共多少集，现在更新到哪了？</summary>
+              <div class="faq-answer">全剧48集，每周四、周日各更新两集。截至11月8日已更新至第12集，会员可看第13、14集预告。按当前排播，大结局预计在12月28日。</div>
+            </details>
+            <details>
+              <summary>《雾中灯塔》是电影还是电视剧？</summary>
+              <div class="faq-answer">是12集都市情感短剧，单集35分钟，在腾讯视频和芒果TV双平台播出。每周三、周六各更新一集，11月8日更新第8集，剩余4集。</div>
+            </details>
+            <details>
+              <summary>《北方往事》什么时候能在网上看？</summary>
+              <div class="faq-answer">院线11月20日上映，流媒体窗口期预计2027年1月上线爱奇艺。发行方在10月平遥影展期间确认过这个时间表，目前没有提前上线付费点播的计划。</div>
+            </details>
+            <details>
+              <summary>网络电影《暗涌》和《铁西区》哪个评分高？</summary>
+              <div class="faq-answer">《铁西区》豆瓣7.8分，评分人数1.2万；《暗涌》平台评分8.1，但豆瓣暂未开分。两个评分体系不同，平台评分通常偏高，豆瓣更严格。看剧本选《铁西区》，看动作场面选《暗涌》。</div>
+            </details>
+            <details>
+              <summary>迷雾剧场12月要上的《回响》是什么类型的剧？</summary>
+              <div class="faq-answer">犯罪悬疑，改编自东西的同名小说，讲一个女刑警调查一桩水库沉尸案时发现自己丈夫有嫌疑。导演是冯小刚，主演宋佳、王阳，共13集，预计12月6日上线爱奇艺。</div>
+            </details>
+            <details>
+              <summary>《怪奇物语》最终季分几部分播出？</summary>
+              <div class="faq-answer">分上下两部分。上半部5集已于11月1日上线Netflix，下半部4集定在2027年1月1日上线。最终集时长2小时15分钟，制作方确认会在部分影院做限定放映。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section-block" id="comments">
+          <h2 class="section-title"><span class="title-accent"></span>用户评论</h2>
+          <div class="comment-grid">
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">林</span>
+                <span class="comment-nick">林间有风</span>
+              </div>
+              <p class="comment-text">长安十二时辰续第12集西市那段追逐戏看了三遍，雷佳音跑起来那个喘气声太真实了，不是配音能配出来的。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">陈</span>
+                <span class="comment-nick">陈默看片</span>
+              </div>
+              <p class="comment-text">雾中灯塔第8集家长会那场戏，女儿说“我想跟爸”的时候，王鸥没哭，就眨了两下眼，看得我难受了半天。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">张</span>
+                <span class="comment-nick">张三日</span>
+              </div>
+              <p class="comment-text">暗涌的剧本是真的不行，海上追了8分钟，上岸之后人物动机就崩了。画面给9分，剧本给5分，平均一下7分吧。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">赵</span>
+                <span class="comment-nick">赵四不熬夜</span>
+              </div>
+              <p class="comment-text">铁西区第4集雪夜拍了11天，怪不得看着那么冷，王景春手指头都是红的。这种细节骗不了人。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">周</span>
+                <span class="comment-nick">周末不加班</span>
+              </div>
+              <p class="comment-text">优酷悬疑剧场那个片单里《沉默的证明2》终于要上了，等了一年半，希望别换主角。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">吴</span>
+                <span class="comment-nick">吴聊看看</span>
+              </div>
+              <p class="comment-text">怪奇物语最终季上半部看完了，第4集那个反转确实没想到，但第5集明显在拖，感觉像把一集的内容拆成了两集。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">郑</span>
+                <span class="comment-nick">郑在追剧</span>
+              </div>
+              <p class="comment-text">北方往事点映看了，16mm胶片的颗粒感在大银幕上太舒服了。有一段拍火车经过，整个画面都在震，声音却是安静的。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">孙</span>
+                <span class="comment-nick">孙大头</span>
+              </div>
+              <p class="comment-text">大地之上第二季最后一集，云南咖啡农那个合作社年营收800万，弹幕里全在问怎么买。纪录片带货能力比直播还强。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">李</span>
+                <span class="comment-nick">李不白</span>
+              </div>
+              <p class="comment-text">迷雾剧场12月《回响》是冯小刚拍的？有点意外，他之前没碰过犯罪悬疑吧。宋佳演刑警倒是挺对路。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">王</span>
+                <span class="comment-nick">王二狗子</span>
+              </div>
+              <p class="comment-text">长安十二时辰续的服化道比第一季细了，第10集那个胡商穿的织锦，花纹和新疆博物馆藏品对得上。道具组下了功夫。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">黄</span>
+                <span class="comment-nick">黄河路阿宝</span>
+              </div>
+              <p class="comment-text">洛基第三季要2027年春季，这也太久了。不过Disney+现在这个节奏，能续订就不错了。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">刘</span>
+                <span class="comment-nick">刘六六</span>
+              </div>
+              <p class="comment-text">雾中灯塔第7集那个做饭的长镜头，张鲁一切土豆丝的动作不对，一看就是现学的。但王鸥在旁边笑的那一下太自然了，整段就活了。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">马</span>
+                <span class="comment-nick">马后炮</span>
+              </div>
+              <p class="comment-text">网络电影现在两极分化严重，暗涌这种砸钱做场面的越来越多，铁西区这种靠本子的越来越少。平台数据应该给后者多一点流量倾斜。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">杨</span>
+                <span class="comment-nick">杨枝甘露不加糖</span>
+              </div>
+              <p class="comment-text">长安十二时辰续的豆瓣评分从8.9掉到8.7了，第11集那个感情戏加得确实没必要。原著里根本没有这条线。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header">
+                <span class="comment-avatar">许</span>
+                <span class="comment-nick">许仙不修仙</span>
+              </div>
+              <p class="comment-text">铁西区里那个烧烤店菜单，一串羊肉串3块钱，现在沈阳找不到这个价了。道具组用的应该是五年前的价目表，细节。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section-block" id="news">
+          <h2 class="section-title"><span class="title-accent"></span>相关资讯</h2>
+          <ul class="news-list">
+            <li>
+              <span class="news-date">11月8日</span>
+              <div class="news-body">
+                <div class="news-title">《长安十二时辰·续》第12集单集弹幕量破42万，创系列新高</div>
+                <p class="news-summary">优酷站内数据显示，第12集“火闹钟”上线6小时弹幕量达42.3万，超过第一季最高单集纪录（38.6万）。弹幕峰值出现在张小敬与龙波西市对峙的1分22秒处。</p>
+              </div>
+            </li>
+            <li>
+              <span class="news-date">11月7日</span>
+              <div class="news-body">
+                <div class="news-title">《暗涌》平台热度值破7000，制片方确认将开发第二部</div>
+                <p class="news-summary">腾讯视频11月7日热度榜显示《暗涌》位列网络电影第二。制片人李海在媒体群访中透露，续集剧本已在筹备，故事将转向内河缉私，预算比第一部增加40%。</p>
+              </div>
+            </li>
+            <li>
+              <span class="news-date">11月6日</span>
+              <div class="news-body">
+                <div class="news-title">《北方往事》北京点映场上座率91%，导演确认流媒体窗口期</div>
+                <p class="news-summary">11月6日北京百老汇影城点映场129个座位售出117张，上座率91%。映后交流中导演张律确认流媒体上线时间为2027年1月，并透露片尾字幕里藏了一段未曝光画面。</p>
+              </div>
+            </li>
+            <li>
+              <span class="news-date">11月5日</span>
+              <div class="news-body">
+                <div class="news-title">爱奇艺迷雾剧场12月片单公布，《回响》定档12月6日</div>
+                <p class="news-summary">片单包含《回响》和《深渊》两部剧，《回响》13集，《深渊》16集。爱奇艺高级副总裁在11月5日发布会上表示，迷雾剧场明年将扩展到8部剧的规模。</p>
+              </div>
+            </li>
+            <li>
+              <span class="news-date">11月3日</span>
+              <div class="news-body">
+                <div class="news-title">《大地之上》第二季收官，B站播放量4700万，弹幕总量破180万</div>
+                <p class="news-summary">11月2日收官集播出后24小时内新增弹幕12万条。制作方在11月3日发布的后记视频中透露，第三季已进入前期调研，拍摄地将转向贵州和甘肃。</p>
+              </div>
+            </li>
+            <li>
+              <span class="news-date">11月1日</span>
+              <div class="news-body">
+                <div class="news-title">《怪奇物语》最终季上半部上线，Netflix单日播放量破2800万</div>
+                <p class="news-summary">Netflix官方11月1日数据显示，上半部5集上线首日全球播放量2800万次，位列当周英语剧集榜首。下半部4集确认2027年1月1日上线，最终集时长2小时15分钟。</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section-block" id="related-recommend">
+          <h2 class="section-title"><span class="title-accent"></span>相关推荐</h2>
+          <div class="tag-index">
+            <a href="#">长安十二时辰·续 第13集预告</a>
+            <a href="#">雾中灯塔 原著小说</a>
+            <a href="#">暗涌 幕后特辑</a>
+            <a href="#">铁西区 导演访谈</a>
+            <a href="#">北方往事 平遥影展回顾</a>
+            <a href="#">大地之上 第一季</a>
+            <a href="#">迷雾剧场 历年片单</a>
+            <a href="#">2026冬季院线前瞻</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：播出时间线 -->
+        <section class="section-block" id="timeline">
+          <h2 class="section-title"><span class="title-accent"></span>播出时间线</h2>
+          <ul class="timeline">
+            <li>
+              <span class="tl-date">11月1日</span>
+              《怪奇物语》最终季上半部上线Netflix，5集一次性放出。
+            </li>
+            <li>
+              <span class="tl-date">11月2日</span>
+              《大地之上》第二季第6集收官，B站播放量定格4700万。
+            </li>
+            <li>
+              <span class="tl-date">11月3日</span>
+              《暗涌》上线腾讯视频，首日热度值5200。
+            </li>
+            <li>
+              <span class="tl-date">11月5日</span>
+              《铁西区》上线爱奇艺，豆瓣第三日开分7.8。
+            </li>
+            <li>
+              <span class="tl-date">11月6日</span>
+              《北方往事》北京点映，猫眼点映评分8.7。
+            </li>
+            <li>
+              <span class="tl-date">11月7日</span>
+              《雾中灯塔》第7集更新，做饭长镜头被拆解讨论。
+            </li>
+            <li>
+              <span class="tl-date">11月8日</span>
+              《长安十二时辰·续》第12集、《雾中灯塔》第8集同日更新。
+            </li>
+          </ul>
+        </section>
+
+        <!-- 12. 投稿互动 -->
+        <section class="section-block" id="interact">
+          <h2 class="section-title"><span class="title-accent"></span>投稿与交流</h2>
+          <div class="interact-panel">
+            <div class="interact-card">
+              <h4>剧评投稿</h4>
+              <p>写《长安十二时辰·续》《雾中灯塔》等热播剧的单集评论或整剧分析，800字以上，采用后署名发布。</p>
+              <a href="#" class="btn-sm">提交稿件</a>
+            </div>
+            <div class="interact-card">
+              <h4>片单共建</h4>
+              <p>推荐你心中的冬季必看片单，附上条目名和一句话理由，每月汇总一次，入选者获得站内徽章。</p>
+              <a href="#" class="btn-sm">推荐片单</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="side-aux">
+        <div class="aux-card">
+          <h3><span class="aux-dot"></span>热播榜</h3>
+          <ul class="hot-list">
+            <li><span class="rank">1</span><div><a href="#" class="hot-title">长安十二时辰·续</a><span class="hot-meta">热度 9862 · 更新至12集</span></div></li>
+            <li><span class="rank">2</span><div><a href="#" class="hot-title">雾中灯塔</a><span class="hot-meta">热度 8734 · 更新至8集</span></div></li>
+            <li><span class="rank">3</span><div><a href="#" class="hot-title">暗涌</a><span class="hot-meta">热度 7145 · 已上线</span></div></li>
+            <li><span class="rank">4</span><div><a href="#" class="hot-title">铁西区</a><span class="hot-meta">热度 6588 · 更新至6集</span></div></li>
+            <li><span class="rank">5</span><div><a href="#" class="hot-title">北方往事</a><span class="hot-meta">热度 6210 · 11月20日上映</span></div></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h3><span class="aux-dot"></span>今日更新</h3>
+          <ul class="update-ticker">
+            <li><span class="ticker-name">长安十二时辰·续 第12集</span><span class="ticker-time">今天 20:00</span></li>
+            <li><span class="ticker-name">雾中灯塔 第8集</span><span class="ticker-time">今天 18:00</span></li>
+            <li><span class="ticker-name">铁西区 第6集</span><span class="ticker-time">昨天 20:00</span></li>
+            <li><span class="ticker-name">暗涌 幕后特辑</span><span class="ticker-time">11月7日</span></li>
+            <li><span class="ticker-name">大地之上 收官后记</span><span class="ticker-time">11月5日</span></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h3><span class="aux-dot"></span>评分速览</h3>
+          <ul class="update-ticker">
+            <li><span class="ticker-name">长安十二时辰·续</span><span class="ticker-time" style="color:var(--primary);font-weight:700;">8.9</span></li>
+            <li><span class="ticker-name">雾中灯塔</span><span class="ticker-time" style="color:var(--primary);font-weight:700;">8.2</span></li>
+            <li><span class="ticker-name">北方往事（点映）</span><span class="ticker-time" style="color:var(--primary);font-weight:700;">8.7</span></li>
+            <li><span class="ticker-name">铁西区</span><span class="ticker-time" style="color:var(--primary);font-weight:700;">7.8</span></li>
+            <li><span class="ticker-name">大地之上 第二季</span><span class="ticker-time" style="color:var(--primary);font-weight:700;">9.3</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="8" fill="#D94F2B"/>
+            <path d="M10 12L16 18L10 24" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 12L24 18L18 24" stroke="#F07A4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="10" r="2" fill="#FFF"/>
+          </svg>
+          花都影视网
+        </div>
+        <p>覆盖2026年11月热播剧集、网络电影与院线新片，条目含更新集数、平台评分与单集看点。每周一、周四更新片单，月度汇总一次。</p>
+      </div>
+      <div class="footer-col">
+        <h4>剧集</h4>
+        <ul>
+          <li><a href="#hot-series">古装悬疑</a></li>
+          <li><a href="#hot-series">都市情感</a></li>
+          <li><a href="#hot-series">犯罪悬疑</a></li>
+          <li><a href="#hot-series">现实题材</a></li>
+          <li><a href="#hot-series">海外剧</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>电影</h4>
+        <ul>
+          <li><a href="#movie-picks">院线新片</a></li>
+          <li><a href="#movie-picks">网络电影</a></li>
+          <li><a href="#movie-picks">文艺剧情</a></li>
+          <li><a href="#movie-picks">纪录片</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#interact">剧评投稿</a></li>
+          <li><a href="#interact">片单共建</a></li>
+          <li><a href="#comments">用户评论</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 花都影视网 · 内容为示例条目，用于展示影视聚合页结构</span>
+      <span>更新于2026年11月8日 · 对应条目：《长安十二时辰·续》第12集、《雾中灯塔》第8集</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      var hamburger = document.getElementById('hamburgerBtn');
+      var overlay = document.getElementById('mobileOverlay');
+      var panel = document.getElementById('mobilePanel');
+      var closeBtn = document.getElementById('closeMenuBtn');
+
+      function openMenu() {
+        overlay.classList.add('active');
+        panel.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        overlay.classList.remove('active');
+        panel.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (panel.classList.contains('active')) { closeMenu(); } else { openMenu(); }
+      });
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && panel.classList.contains('active')) { closeMenu(); }
+      });
+      // 点击导航后自动收起
+      panel.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // 搜索筛选
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var cards = document.querySelectorAll('.content-card');
+      var noResult = document.getElementById('searchNoResult');
+
+      function filterCards() {
+        var q = searchInput.value.trim().toLowerCase();
+        var visibleCount = 0;
+        cards.forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (q === '' || text.indexOf(q) !== -1) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (q !== '' && visibleCount === 0) {
+          noResult.classList.add('active');
+        } else {
+          noResult.classList.remove('active');
+        }
+      }
+      searchBtn.addEventListener('click', filterCards);
+      searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') { filterCards(); }
+      });
+      searchInput.addEventListener('input', filterCards);
+
+      // 回到顶部
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * 0.8) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 频道高亮
+      var channelLinks = document.querySelectorAll('.channel-index a');
+      var sections = [];
+      channelLinks.forEach(function(link) {
+        var id = link.getAttribute('href').replace('#', '');
+        var section = document.getElementById(id);
+        if (section) { sections.push({ id: id, el: section, link: link }); }
+      });
+      window.addEventListener('scroll', function() {
+        var scrollPos = window.scrollY + 120;
+        var current = null;
+        sections.forEach(function(s) {
+          if (s.el.offsetTop <= scrollPos) { current = s; }
+        });
+        channelLinks.forEach(function(l) { l.classList.remove('active'); });
+        if (current) { current.link.classList.add('active'); }
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "花都影视网",
+    "description": "花都影视网汇聚2026年11月热播剧集、电影片单与深度解析，提供《长安十二时辰·续》《雾中灯塔》等条目看点、评分与更新动态。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《长安十二时辰·续》一共多少集，现在更新到哪了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "全剧48集，每周四、周日各更新两集。截至11月8日已更新至第12集，会员可看第13、14集预告。按当前排播，大结局预计在12月28日。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《雾中灯塔》是电影还是电视剧？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "是12集都市情感短剧，单集35分钟，在腾讯视频和芒果TV双平台播出。每周三、周六各更新一集，11月8日更新第8集，剩余4集。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《北方往事》什么时候能在网上看？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "院线11月20日上映，流媒体窗口期预计2027年1月上线爱奇艺。发行方在10月平遥影展期间确认过这个时间表，目前没有提前上线付费点播的计划。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "网络电影《暗涌》和《铁西区》哪个评分高？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "《铁西区》豆瓣7.8分，评分人数1.2万；《暗涌》平台评分8.1，但豆瓣暂未开分。两个评分体系不同，平台评分通常偏高，豆瓣更严格。看剧本选《铁西区》，看动作场面选《暗涌》。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "迷雾剧场12月要上的《回响》是什么类型的剧？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "犯罪悬疑，改编自东西的同名小说，讲一个女刑警调查一桩水库沉尸案时发现自己丈夫有嫌疑。导演是冯小刚，主演宋佳、王阳，共13集，预计12月6日上线爱奇艺。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《怪奇物语》最终季分几部分播出？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "分上下两部分。上半部5集已于11月1日上线Netflix，下半部4集定在2027年1月1日上线。最终集时长2小时15分钟，制作方确认会在部分影院做限定放映。"
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+      </html>
