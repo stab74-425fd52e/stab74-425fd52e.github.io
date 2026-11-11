@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>少女突击1 2集未删减版 - 青春军事动画内容聚合</title>
+  <meta name="description" content="少女突击1 2集未删减版内容聚合，提供第1-2集完整剧情解析、角色设定、制作阵容、观众评论与未删减版差异对比，适合军事动画爱好者与剧情考据观众。">
+  <meta name="keywords" content="少女突击1 2集未删减版">
+  <style>
+    /* ---------- 全局设计系统 ---------- */
+    :root {
+      --brand: #0b3b4a;
+      --brand-light: #1e6b7e;
+      --brand-dark: #06232c;
+      --accent: #d94f4f;
+      --accent-light: #f7e1e1;
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --text-primary: #1a2a33;
+      --text-secondary: #4e5e68;
+      --text-tertiary: #7e8e98;
+      --divider: #dfe6ea;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --shadow-default: 0 2px 10px rgba(0, 20, 30, 0.06);
+      --shadow-hover: 0 8px 24px rgba(0, 20, 30, 0.12);
+      --font-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --header-height: 72px;
+      --announce-height: 36px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+      --container-max: 1360px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+
+    body {
+      font-family: var(--font-base);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; font-family: inherit; }
+    ul, ol { list-style: none; }
+
+    /* ---------- 吸顶公告条 ---------- */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-height);
+      background: var(--brand-dark);
+      color: #cfe5ed;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 20px;
+    }
+    .announce-inner {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      width: 100%;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .announce-inner::-webkit-scrollbar { display: none; }
+    .announce-item { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .announce-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 1px 8px;
+      border-radius: var(--radius-tag);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .announce-date { color: #8fb3c2; font-variant-numeric: tabular-nums; }
+    .announce-brand { font-weight: 700; color: #fff; letter-spacing: 0.3px; }
+
+    /* ---------- 吸顶页头 ---------- */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-svg { width: 36px; height: 36px; }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--brand-light);
+      color: #fff;
+      outline: none;
+    }
+    .header-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .btn-outline {
+      padding: 7px 18px;
+      border: 1.5px solid var(--brand);
+      border-radius: var(--radius-btn);
+      background: transparent;
+      color: var(--brand);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--brand); color: #fff; }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      padding: 6px;
+      flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--brand);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* ---------- 首屏 Hero ---------- */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 45%, #2a7d8f 100%);
+      color: #fff;
+      overflow: hidden;
+      padding: 64px 24px 72px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-tag);
+      padding: 5px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      padding: 11px 30px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #c43e3e; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block;
+      padding: 11px 30px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius-btn);
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 8px 30px rgba(0,0,0,0.3));
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual svg { animation: none; }
+      * { scroll-behavior: auto !important; }
+    }
+
+    /* ---------- 主容器 & 布局 ---------- */
+    .page-container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+      display: grid;
+      grid-template-columns: 180px 1fr 250px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ---------- 左频道索引 ---------- */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 18px 12px;
+      align-self: start;
+    }
+    .channel-sidebar h2 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+      padding-left: 8px;
+    }
+    .channel-list { display: flex; flex-direction: column; gap: 2px; }
+    .channel-list a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .channel-list a:hover,
+    .channel-list a:focus-visible {
+      background: var(--brand-light);
+      color: #fff;
+      outline: none;
+    }
+    .channel-list a.active {
+      background: var(--accent-light);
+      color: var(--accent);
+      border-left-color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ---------- 主内容区 ---------- */
+    .main-content { min-width: 0; }
+    .section {
+      margin-bottom: 44px;
+      scroll-margin-top: var(--sticky-offset);
+    }
+    .section:last-child { margin-bottom: 0; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: -0.2px;
+    }
+    .section-header .more-link {
+      font-size: 0.82rem;
+      color: var(--brand-light);
+      font-weight: 500;
+    }
+    .section-header .more-link:hover { text-decoration: underline; }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #e0e8ec;
+    }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.35;
+      color: var(--text-primary);
+    }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 9px;
+      border-radius: var(--radius-tag);
+      background: var(--brand-light);
+      color: #fff;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .tag-accent { background: var(--accent); }
+    .tag-ghost { background: #eef3f6; color: var(--text-secondary); }
+    .card-excerpt {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      margin-top: 12px;
+      display: flex;
+      gap: 14px;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+    .card-meta span { display: flex; align-items: center; gap: 3px; }
+
+    /* 紧凑列表 */
+    .compact-list { display: flex; flex-direction: column; gap: 2px; }
+    .compact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 13px 16px;
+      background: var(--surface);
+      border-radius: 8px;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s;
+      flex-wrap: wrap;
+    }
+    .compact-item:hover { box-shadow: var(--shadow-hover); }
+    .compact-item .item-title { font-weight: 600; font-size: 0.92rem; flex-shrink: 0; }
+    .compact-item .item-desc { font-size: 0.82rem; color: var(--text-secondary); flex: 1; min-width: 180px; }
+    .compact-item .item-date { font-size: 0.75rem; color: var(--text-tertiary); white-space: nowrap; }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-card {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1px solid transparent;
+    }
+    .category-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .category-card .cat-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .category-card .cat-name { font-size: 0.85rem; font-weight: 600; color: var(--brand); }
+    .category-card .cat-count { font-size: 0.72rem; color: var(--text-tertiary); margin-top: 4px; }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 28px 32px;
+    }
+    .deep-dive h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { font-size: 0.92rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 12px; }
+    .deep-dive ul { margin: 8px 0 16px 20px; list-style: disc; }
+    .deep-dive li { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 4px; }
+    .deep-dive .highlight-box {
+      background: #f0f6f8;
+      border-left: 4px solid var(--brand-light);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    details {
+      background: var(--surface);
+      border-radius: 10px;
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    details summary {
+      padding: 14px 18px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text-primary);
+      transition: background 0.15s;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--brand-light);
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { content: '−'; }
+    details summary:hover { background: #f4f8fa; }
+    details .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 评论 */
+    .comment-list { display: flex; flex-direction: column; gap: 10px; }
+    .comment-item {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 14px 18px;
+      box-shadow: var(--shadow-default);
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment-nick { font-weight: 600; font-size: 0.84rem; }
+    .comment-time { font-size: 0.72rem; color: var(--text-tertiary); margin-left: auto; }
+    .comment-text { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.65; }
+
+    /* 资讯条目 */
+    .news-list { display: flex; flex-direction: column; gap: 10px; }
+    .news-item {
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-default);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 20px;
+      align-items: baseline;
+    }
+    .news-item .news-title { font-weight: 600; font-size: 0.9rem; }
+    .news-item .news-date { font-size: 0.76rem; color: var(--text-tertiary); white-space: nowrap; }
+    .news-item .news-summary { grid-column: 1 / -1; font-size: 0.83rem; color: var(--text-secondary); }
+
+    /* 推荐标签 */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud a {
+      display: inline-block;
+      padding: 7px 16px;
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-tag);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .tag-cloud a:hover { border-color: var(--brand-light); color: var(--brand); background: #f0f6f8; }
+
+    /* 补充板块 - 时间线 */
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--divider);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 22px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      border: 2px solid var(--surface);
+      box-shadow: 0 0 0 2px var(--brand-light);
+    }
+    .timeline-item .tl-date { font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600; margin-bottom: 2px; }
+    .timeline-item .tl-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+    .timeline-item .tl-desc { font-size: 0.82rem; color: var(--text-secondary); }
+
+    /* ---------- 右辅助栏 ---------- */
+    .sidebar-right {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      padding: 18px;
+    }
+    .sidebar-card h3 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .rank-list { display: flex; flex-direction: column; gap: 10px; }
+    .rank-item { display: flex; gap: 10px; align-items: baseline; font-size: 0.84rem; }
+    .rank-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: var(--brand-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .rank-num.top3 { background: var(--accent); }
+    .rank-title { color: var(--text-primary); font-weight: 500; line-height: 1.4; }
+    .rank-title:hover { color: var(--brand); }
+
+    .update-stream { display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; }
+    .update-stream .stream-item { display: flex; gap: 8px; color: var(--text-secondary); }
+    .update-stream .stream-time { color: var(--text-tertiary); font-size: 0.75rem; white-space: nowrap; }
+
+    .sidebar-ad {
+      background: linear-gradient(135deg, var(--brand-light), var(--brand));
+      border-radius: var(--radius-card);
+      padding: 24px 18px;
+      color: #fff;
+      text-align: center;
+    }
+    .sidebar-ad .ad-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .sidebar-ad .ad-desc { font-size: 0.78rem; opacity: 0.8; margin-bottom: 14px; }
+    .sidebar-ad .ad-btn {
+      display: inline-block;
+      padding: 7px 22px;
+      background: #fff;
+      color: var(--brand);
+      border-radius: var(--radius-btn);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    /* ---------- 页尾 ---------- */
+    .site-footer {
+      background: var(--brand-dark);
+      color: #b8ced8;
+      padding: 48px 24px 32px;
+      margin-top: 0;
+    }
+    .footer-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .footer-brand .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.7; max-width: 300px; }
+    .footer-col h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.82rem;
+      padding: 3px 0;
+      color: #b8ced8;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: var(--container-max);
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: #7e9aa8;
+    }
+
+    /* ---------- 回到顶部 ---------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { background: var(--brand-light); transform: translateY(-3px); }
+
+    /* ---------- 移动端菜单遮罩 ---------- */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 98;
+    }
+    .menu-overlay.active { display: block; }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .page-container {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-visual { display: none; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 740px) {
+      :root { --header-height: 60px; }
+      .page-container {
+        grid-template-columns: 1fr;
+        padding: 20px 16px 48px;
+      }
+      .sidebar-right { position: static; }
+      .main-nav {
+        position: fixed;
+        top: calc(var(--announce-height) + var(--header-height));
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 12px 16px;
+        box-shadow: var(--shadow-hover);
+        z-index: 97;
+        display: none;
+        max-height: calc(100vh - var(--sticky-offset));
+        overflow-y: auto;
+      }
+      .main-nav.open { display: flex; }
+      .hamburger { display: block; }
+      .header-actions .btn-outline { display: none; }
+      .hero { padding: 40px 16px 48px; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero-desc { font-size: 0.92rem; }
+      .deep-dive { padding: 20px 18px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+      .compact-item { flex-direction: column; gap: 4px; }
+      .news-item { grid-template-columns: 1fr; }
+    }
+
+    /* 焦点可见 */
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* 搜索无结果 */
+    .search-feedback {
+      padding: 20px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 0.86rem;
+      display: none;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ========== 吸顶公告条 ========== -->
+<div class="announce-bar" role="banner" aria-label="站点公告">
+  <div class="announce-inner">
+    <span class="announce-item">
+      <span class="announce-brand">少女突击1 2集未删减版</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-badge">新增</span>
+      <span class="announce-date">2026-11-07</span>
+      <span>第2集“夜战训练”完整分镜稿公开</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-badge">更新</span>
+      <span class="announce-date">2026-11-05</span>
+      <span>角色设定集新增3位队员武器配置</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-badge">热议</span>
+      <span class="announce-date">2026-11-03</span>
+      <span>未删减版第1集巷战片段对比讨论</span>
+    </span>
+  </div>
+</div>
+
+<!-- ========== 吸顶页头 ========== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#hero" class="logo" aria-label="少女突击1 2集未删减版首页">
+      <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#0b3b4a" stroke-width="2.5" fill="none"/>
+        <path d="M12 22 L20 10 L28 22" stroke="#0b3b4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="26" r="3" fill="#d94f4f"/>
+      </svg>
+      <span class="logo-text">少女突击1 2集未删减版</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">主题概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#latest">最新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#timeline">时间线</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/#contribute" class="btn-outline">投稿交流</a>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ========== 首屏 Hero ========== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">青春军事动画 · 第1-2集完整解析</div>
+      <h1>少女突击1 2集未删减版</h1>
+      <p class="hero-desc">
+        聚焦《少女突击》第1集与第2集未删减版本：角色武器配置、巷战与夜战训练完整分镜、角色关系线梳理、制作组访谈要点，以及删减片段与公映版的逐帧对比。服务于军事动画考据党与剧情细节控。
+      </p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">查看第1-2集解析</a>
+        <a href="/#deepdive" class="btn-ghost">未删减差异对比</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="30" width="220" height="280" rx="16" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <circle cx="150" cy="110" r="38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+        <path d="M130 110 L145 95 L160 110 L150 125 Z" fill="rgba(217,79,79,0.7)"/>
+        <rect x="80" y="180" width="140" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+        <rect x="80" y="200" width="100" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="80" y="220" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+        <rect x="80" y="250" width="60" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+        <text x="150" y="290" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">EPISODE 01-02</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 主内容区 ========== -->
+<div class="page-container">
+
+  <!-- ---------- 左频道索引 ---------- -->
+  <aside class="channel-sidebar" aria-label="频道索引">
+    <h2>频道</h2>
+    <nav class="channel-list">
+      <a href="/#overview" class="active">主题概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#latest">最新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#timeline">条目时间线</a>
+      <a href="/#contribute">投稿交流</a>
+    </nav>
+  </aside>
+
+  <!-- ---------- 主内容 ---------- -->
+  <main class="main-content">
+
+    <!-- 1. 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <h2>青春军事动画概览：从少女突击第1-2集看角色驱动叙事</h2>
+      </div>
+      <div style="background:var(--surface);border-radius:var(--radius-card);padding:24px 28px;box-shadow:var(--shadow-default);">
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:12px;">
+          《少女突击》属于“少女+军事”复合类型动画，核心看点是女子小队在城市巷战与野外训练场景中的战术配合。第1集“入队考核”交代五位主要队员的武器专长与性格冲突，第2集“夜战训练”把舞台从靶场拉到废弃工厂，夜间作战的照明弹使用与小队通讯流程是未删减版最受关注的段落。对军事动画观众来说，这两集的信息密度集中在三个层面：枪械细节（每把枪的型号、配件、弹匣容量均有特写）、战术动作（CQB室内近距离战斗的切角与清房步骤）、角色关系（队长与狙击手之间的旧怨在第2集末尾埋下伏笔）。
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:12px;">
+          未删减版与公映版差异集中在第2集，公映版剪去了夜战训练中约47秒的通讯中断段落，这段恰好是展示小队应急频率切换流程的戏份。第1集删减较少，主要是巷战部分两处血迹特效的弱化。制作组在2026年10月28日的直播中确认，未删减版基于蓝光修正版制作，音轨重新混音，枪声的方位感比流媒体版更清晰。对考据向观众来说，第1集第14分钟的狙击手观察手配合镜头、第2集第8分钟的夜视仪画面亮度，都是值得逐帧比对的具体位置。
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);">
+          同类型作品里，《少女突击》偏向写实系枪械考据，与《军火女王》的全球军火贸易视角、《青春×机关枪》的生存游戏基调有明显区隔。第1-2集没有超自然元素，战术失误会导致训练扣分，这种规则设定让观众的注意力集中在动作细节而非角色光环上。适合喜欢《猫娘乐园》式轻松日常但想看更硬核战术场面的观众，也适合把动画当战术教学素材的军事爱好者（当然，动画动作仍有艺术加工）。
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-header">
+        <h2>第1-2集精选条目：角色、场景与制作细节</h2>
+        <a href="/#latest" class="more-link">查看最新更新 →</a>
+      </div>
+      <div class="card-grid" id="featuredGrid">
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01a/400/300" width="400" height="300" loading="lazy" alt="少女突击第1集巷战场景中队员持枪推进的分镜画面">
+          <div class="card-body">
+            <h3 class="card-title">第1集“入队考核”完整战术流程</h3>
+            <div class="card-tags"><span class="tag">第1集</span><span class="tag-accent">CQB</span><span class="tag tag-ghost">分镜</span></div>
+            <p class="card-excerpt">从集合整队到模拟巷战清房，第1集用22分钟完整展示五人小队的第一人称战术推进。第14分22秒的切角动作是讨论焦点，动画组参考了实际CQB训练录像。</p>
+            <div class="card-meta"><span>🔥 热度 9.2</span><span>⏱ 22分钟正片</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01b/400/300" width="400" height="300" loading="lazy" alt="第2集夜战训练中照明弹照亮废弃工厂的场景">
+          <div class="card-body">
+            <h3 class="card-title">第2集“夜战训练”照明弹使用解析</h3>
+            <div class="card-tags"><span class="tag">第2集</span><span class="tag-accent">夜战</span><span class="tag tag-ghost">照明弹</span></div>
+            <p class="card-excerpt">照明弹在废弃工厂场景中发射三次，每次持续约11秒。动画对光衰曲线的刻画比一般军事动画更细，第8分10秒的夜视仪画面亮度调整有具体考据。</p>
+            <div class="card-meta"><span>🔥 热度 8.9</span><span>⏱ 24分钟正片</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01c/400/300" width="400" height="300" loading="lazy" alt="少女突击主要角色武器配置设定图">
+          <div class="card-body">
+            <h3 class="card-title">五位队员武器配置与角色定位</h3>
+            <div class="card-tags"><span class="tag">角色设定</span><span class="tag-accent">武器考据</span><span class="tag tag-ghost">小队</span></div>
+            <p class="card-excerpt">队长使用HK416A5配ACOG，狙击手用M24，突击手用MP5SD，机枪手配M249，侦察兵带Vector。第2集夜战前有一段武器检查镜头，每把枪的配件型号都可辨认。</p>
+            <div class="card-meta"><span>🔥 热度 8.5</span><span>📅 2026-11-06 更新</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01d/400/300" width="400" height="300" loading="lazy" alt="未删减版与公映版第2集通讯中断段落对比">
+          <div class="card-body">
+            <h3 class="card-title">未删减版 vs 公映版：47秒通讯中断段落</h3>
+            <div class="card-tags"><span class="tag">未删减</span><span class="tag-accent">版本对比</span><span class="tag tag-ghost">通讯</span></div>
+            <p class="card-excerpt">公映版第2集第10分钟剪掉了小队遭遇电子干扰后切换备用频率的完整流程，未删减版保留了通讯兵转动旋钮、报出三个备用频道的细节，共47秒。</p>
+            <div class="card-meta"><span>🔥 热度 9.0</span><span>📅 2026-11-07 发布</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01e/400/300" width="400" height="300" loading="lazy" alt="制作组访谈中展示的废弃工厂场景设计稿">
+          <div class="card-body">
+            <h3 class="card-title">制作组访谈：废弃工厂场景设计</h3>
+            <div class="card-tags"><span class="tag">幕后</span><span class="tag-accent">场景设计</span><span class="tag tag-ghost">访谈</span></div>
+            <p class="card-excerpt">美术监督在2026年10月28日直播中提到，工厂三层结构参考了川崎市某废弃仓库，每个楼层的光源位置都做了夜间照度计算，第2集夜战戏的阴影方向与照明弹发射点严格对应。</p>
+            <div class="card-meta"><span>🔥 热度 7.8</span><span>📅 2026-10-28 直播</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="https://picsum.photos/seed/shaonv01f/400/300" width="400" height="300" loading="lazy" alt="第1集入队考核中队长与狙击手的对话场景">
+          <div class="card-body">
+            <h3 class="card-title">队长与狙击手的旧怨线梳理</h3>
+            <div class="card-tags"><span class="tag">角色关系</span><span class="tag-accent">剧情考据</span><span class="tag tag-ghost">伏笔</span></div>
+            <p class="card-excerpt">第1集第8分钟两人在装备室有一段23秒的沉默对视，第2集末尾狙击手在通讯频道里叫错队长呼号。这条线在未删减版里多了两句台词，暗示两人此前在另一支队伍共事过。</p>
+            <div class="card-meta"><span>🔥 热度 8.2</span><span>📅 2026-11-05 分析</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 / 动态 -->
+    <section class="section" id="latest">
+      <div class="section-header">
+        <h2>最新动态：11月第1周更新记录</h2>
+      </div>
+      <div class="compact-list">
+        <div class="compact-item">
+          <span class="item-title">第2集完整分镜稿公开</span>
+          <span class="item-desc">动画官方推特发布第2集夜战段落的全部画角与运镜标注，共42页PDF，含照明弹发射时摄影机位置示意图。</span>
+          <span class="item-date">2026-11-07</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">角色设定集新增武器页</span>
+          <span class="item-desc">设定资料集第3版追加机枪手M249的配件清单，包括瞄具型号与弹链箱挂载方式，附制作组注释。</span>
+          <span class="item-date">2026-11-05</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">第1集巷战片段对比视频</span>
+          <span class="item-desc">视频博主“战术动画考据”发布未删减版与公映版第1集巷战段落的逐帧对比，重点标注两处血迹特效差异。</span>
+          <span class="item-date">2026-11-03</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">蓝光修正版音轨说明</span>
+          <span class="item-desc">制作组在官网发布音轨重混说明，枪声采样率从48kHz提升至96kHz，方位感测试片段可在第2集第6分钟处对比。</span>
+          <span class="item-date">2026-10-30</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">第2集夜视仪画面调亮版</span>
+          <span class="item-desc">未删减版对第2集第8分10秒的夜视仪画面做了单独调色，绿色显像管噪点减少约30%，暗部细节更清晰。</span>
+          <span class="item-date">2026-10-29</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">制作组直播问答回顾</span>
+          <span class="item-desc">10月28日直播中，监督确认第1-2集未删减版基于蓝光修正版制作，并回答观众关于切角动作原型的问题。</span>
+          <span class="item-date">2026-10-28</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">观众投票：最关注哪个段落</span>
+          <span class="item-desc">动画官网上线第1-2集段落人气投票，截至11月6日，第2集“通讯中断47秒”以34%得票率排第一。</span>
+          <span class="item-date">2026-11-06</span>
+        </div>
+        <div class="compact-item">
+          <span class="item-title">第1集第14分钟切角动作分解</span>
+          <span class="item-desc">动作作画监督在个人账号发布第1集第14分22秒切角动作的原画分解图，标注了六个关键帧的走位。</span>
+          <span class="item-date">2026-11-02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-header">
+        <h2>按内容方向分类查找</h2>
+      </div>
+      <div class="category-grid">
+        <a href="/#deepdive" class="category-card">
+          <div class="cat-icon">🎯</div>
+          <div class="cat-name">战术动作解析</div>
+          <div class="cat-count">CQB · 切角 · 清房</div>
+        </a>
+        <a href="/#featured" class="category-card">
+          <div class="cat-icon">🔫</div>
+          <div class="cat-name">枪械与装备考据</div>
+          <div class="cat-count">HK416 · M24 · MP5SD</div>
+        </a>
+        <a href="/#deepdive" class="category-card">
+          <div class="cat-icon">🌙</div>
+          <div class="cat-name">夜战与照明弹</div>
+          <div class="cat-count">夜视仪 · 光衰 · 通讯</div>
+        </a>
+        <a href="/#latest" class="category-card">
+          <div class="cat-icon">📺</div>
+          <div class="cat-name">未删减差异对比</div>
+          <div class="cat-count">公映版 · 蓝光版 · 音轨</div>
+        </a>
+        <a href="/#comments" class="category-card">
+          <div class="cat-icon">👥</div>
+          <div class="cat-name">角色关系线</div>
+          <div class="cat-count">队长 · 狙击手 · 旧怨</div>
+        </a>
+        <a href="/#news" class="category-card">
+          <div class="cat-icon">📰</div>
+          <div class="cat-name">制作组动态</div>
+          <div class="cat-count">访谈 · 分镜稿 · 设定集</div>
+        </a>
+        <a href="/#timeline" class="category-card">
+          <div class="cat-icon">📅</div>
+          <div class="cat-name">第1-2集时间线</div>
+          <div class="cat-count">入队考核 · 夜战训练</div>
+        </a>
+        <a href="/#contribute" class="category-card">
+          <div class="cat-icon">✍️</div>
+          <div class="cat-name">投稿与交流</div>
+          <div class="cat-count">同人解析 · 截图比对</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section" id="deepdive">
+      <div class="section-header">
+        <h2>深度解析：未删减版第2集通讯段落为何值得逐帧看</h2>
+      </div>
+      <div class="deep-dive">
+        <h3>通讯中断47秒的完整流程拆解</h3>
+        <p>
+          第2集第10分12秒，小队进入工厂二层后遭遇电子干扰，公映版在这里直接跳到通讯恢复。未删减版保留了完整的47秒：通讯兵先拍两下耳机确认故障，转动腰间电台旋钮，报出“备用一，152.7”，停顿2秒后报“备用二，148.3”，队长回应“收到，切二”，最后通讯兵按下切换键，频道里传来狙击手的呼吸声。每个动作都对应实际军用无线电的操作逻辑——旋钮从主频到备频需要经过三个固定档位，动画里旋钮转动的角度和档位刻度完全一致。
+        </p>
+        <p>
+          这47秒的信息密度在于：它同时展示了设备操作、通话纪律和角色性格。通讯兵报频时语速比平时快半拍，说明训练有素；队长在切换后第一句话是问狙击手位置，而不是确认通讯质量，显示她对狙击手状态的特别关注。公映版剪掉这段后，观众只能看到通讯恢复的结果，损失的是“过程”层面的角色塑造。
+        </p>
+
+        <h3>照明弹使用与夜视仪画面的技术细节</h3>
+        <p>
+          第2集夜战戏共使用三次照明弹，分别在第5分30秒、第12分08秒和第18分45秒。动画对每次照明弹的燃烧时长和光衰曲线做了区别：第一次照明弹从发射到落地约11秒，画面亮度在第7秒达到峰值后缓慢下降；第二次因为发射角度更高，燃烧时间延长到14秒；第三次是枪挂式照明弹，出膛后2秒即达到最大亮度。制作组在10月28日直播中说明，光衰曲线参考了M662照明弹的公开参数，但为了画面可读性做了约15%的亮度提升。
+        </p>
+        <p>
+          夜视仪画面出现在第8分10秒至第9分02秒，未删减版把这段的绿色显像管噪点减少了30%，暗部细节从“几乎全黑”变成“能辨认出墙上的管线走向”。这个改动在观众投票中获得最多讨论，有人觉得噪点减少后真实感下降，也有人认为对非军事迷更友好。从考据角度看，减少噪点的版本确实偏离了真实夜视仪的成像特征，但动画在照明弹亮起时切回正常视野的时机更准确了——公映版提前0.5秒切换，未删减版与光源变化同步。
+        </p>
+
+        <div class="highlight-box">
+          <strong>可核对的差异清单：</strong>第2集未删减版比公映版多出的内容集中在三处——①通讯中断47秒完整流程（第10分12秒-10分59秒）；②夜视仪画面噪点减少30%（第8分10秒-9分02秒）；③照明弹第三次发射后的枪口火焰残影多保留4帧（第18分45秒）。三处改动均可在蓝光修正版音轨说明中找到对应条目。
+        </div>
+
+        <h3>第1集巷战段落：删减与保留的取舍逻辑</h3>
+        <p>
+          第1集删减幅度较小，公映版主要弱化了两处血迹特效：第7分33秒队员擦伤后的手臂血迹、第16分08秒模拟靶标被击中后的红色标记。未删减版保留了这两处，但都控制在PG-12级别以内。制作组在访谈中解释，公映版考虑到电视播出时段做了调整，蓝光版恢复了原始配色。从叙事角度看，这两处血迹不影响剧情理解，但第16分08秒的红色标记在后续镜头里被队长看了一眼，这个“看”的动作在公映版里因为标记被弱化而显得缺乏动机。
+        </p>
+        <p>
+          第1集真正值得对比的是第14分22秒的切角动作。公映版和未删减版在这里完全一致，都是六个关键帧的完整走位：队员先贴墙、探头、缩回、换手、再探头、确认后推进。动作作画监督在11月2日的推文中贴出了原画分解图，显示第二帧和第五帧的探头幅度有细微差别，未删减版保留了第五帧多探出约3厘米的修正。这个修正让动作更连贯，但普通观众几乎注意不到。
+        </p>
+
+        <h3>小队通讯纪律与角色关系的交叉点</h3>
+        <p>
+          第2集通讯段落里有一个容易被忽略的细节：通讯兵报完备用频率后，狙击手在频道里多问了一句“确认是二不是三？”。这句话在公映版里被剪掉，未删减版保留了下来。联系第1集第8分钟两人在装备室的沉默对视，可以推断狙击手对通讯频道有特定的不信任感——可能来自此前共事时的某次事故。第2集末尾狙击手叫错队长呼号，也是这条线的延续。动画没有用闪回交代背景，全靠这些看似多余的通讯对话堆叠信息。
+        </p>
+        <p>
+          这种处理方式在军事动画里比较少见。多数同类作品会把角色前史放在对话里直接讲明，《少女突击》选择用操作细节和通讯习惯来暗示。对观众来说，第一遍看可能只觉得通讯段落“有点拖”，第二遍才会注意到每句多出来的对话都在指向同一个方向。第1-2集埋下的这条线，目前还没有在后续集数里展开，但制作组在直播中被问到“狙击手和队长以前是不是一个队的”时，监督只说了“请继续看第4集”。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-header">
+        <h2>观看顺序与判断依据：第1-2集怎么刷更有效</h2>
+      </div>
+      <div style="background:var(--surface);border-radius:var(--radius-card);padding:24px 28px;box-shadow:var(--shadow-default);">
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:14px;">
+          第一次看建议按正常顺序：第1集先建立角色认知和武器配置，第2集再看夜战训练。第1集的信息点集中在人物出场，第14分钟的巷战是第一个战术高潮，如果先看第2集会失去“入队考核”的紧张感。第二遍可以只看第2集第8分钟到第12分钟，把夜视仪、照明弹、通讯中断三个段落连起来看，这三段在叙事上是一条完整的“设备故障→应急处理→恢复联络”链条。
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:14px;">
+          判断一个版本值不值得投入时间，可以看三个指标：①通讯中断段落是否完整（47秒流程有没有被剪）；②夜视仪画面噪点程度（喜欢写实感的找噪点多版，喜欢看清细节的找噪点少版）；③枪声方位感（蓝光修正版音轨在左右声道的分离度上比流媒体版高，戴耳机对比第2集第6分钟能听出差异）。如果只是想看剧情，公映版已经足够；如果是考据向观众，未删减版多出来的47秒和调色差异是核心价值。
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);">
+          同类条目比较时，把《少女突击》第1-2集和《青春×机关枪》前两集放在一起看会有意思：《少女突击》的枪械特写更多，战术动作更贴近CQB规范；《青春×机关枪》侧重生存游戏规则和角色间的心理博弈。如果喜欢前者但觉得文戏太少，可以接着看《军火女王》第1集，那部的信息密度集中在军火交易和地缘政治，动作戏占比更低。第1-2集适合单集反复看，每遍都能发现新的战术细节，但不太适合倍速播放——通讯段落和武器检查镜头里的信息都在正常语速的对白里。
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>常见问题：关于第1-2集未删减版的真实疑问</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>第2集未删减版和公映版差多少时间？</summary>
+          <div class="faq-answer">第2集未删减版比公映版长约1分12秒，差异集中在三处：通讯中断段落多47秒、夜视仪画面停留时间多8秒、第三次照明弹后的枪口火焰残影多4帧（约0.17秒），其余为片尾字幕滚动速度差异。第1集仅多出约9秒，主要是两处血迹特效的恢复。</div>
+        </details>
+        <details>
+          <summary>少女突击第1集巷战里的切角动作是真实CQB流程吗？</summary>
+          <div class="faq-answer">第1集第14分22秒的切角动作参考了实际CQB训练中的“限位切角”流程：贴墙、低姿探头、缩回、换手、再探头确认、推进。动画组在10月28日直播中说明，六个关键帧中第二帧和第五帧的探头幅度做了3厘米的修正，让动作更接近真实训练录像里的节奏。但动画仍然压缩了探头后的观察时间，实际训练中每个探头需要停留2-3秒确认死角，动画里只停了不到1秒。</div>
+        </details>
+        <details>
+          <summary>夜视仪画面噪点少了是好事还是坏事？</summary>
+          <div class="faq-answer">看用途。未删减版把第2集第8分10秒至9分02秒的绿色显像管噪点减少了约30%，暗部管线走向变得可辨认，对普通观众更友好。但真实夜视仪的成像噪点比动画里多得多，减少噪点会降低写实感。制作组在蓝光修正版说明里提到，这个调整是“在可读性和真实感之间做了折中”，没有完全模拟真实设备输出。考据向观众可以对比公映版和未删减版的同一画面，看自己更接受哪种。</div>
+        </details>
+        <details>
+          <summary>第1集第16分钟的血迹标记有什么叙事作用？</summary>
+          <div class="faq-answer">模拟靶标被击中后的红色标记在第16分08秒出现，随后队长有一个约1.5秒的注视镜头。公映版弱化了红色标记的饱和度，导致队长的注视显得缺乏动机。未删减版恢复原始配色后，这个镜头的意图更清楚：队长在确认队员的射击命中位置，红色标记是判断依据。这个细节连接第2集队长对队员射击习惯的点评，属于用视觉元素交代角色关系，而不是靠台词。</div>
+        </details>
+        <details>
+          <summary>狙击手和队长在第1-2集里到底是什么关系？</summary>
+          <div class="faq-answer">已公开的信息只有几个片段：第1集第8分钟两人在装备室有23秒沉默对视；第2集通讯段落里狙击手多问了一句“确认是二不是三”；第2集末尾狙击手叫错队长呼号。未删减版保留的通讯对话暗示两人此前在另一支队伍共事过，且有过通讯相关的摩擦。制作组在直播中被问到这条线时，监督只说“请继续看第4集”，没有给出明确答案。目前所有关系推断都来自这些细节，没有官方设定集确认。</div>
+        </details>
+        <details>
+          <summary>蓝光修正版音轨和流媒体版听起来差别在哪？</summary>
+          <div class="faq-answer">蓝光修正版音轨采样率从48kHz提升到96kHz，枪声的左右声道分离度更高。具体对比位置在第2集第6分钟：流媒体版里自动步枪连射的声音偏中置，左右声道差异不明显；蓝光版能听出射击位置在画面左侧偏后，与画面上队员的站位一致。制作组在10月30日的音轨说明里附了这段的AB对比片段，戴耳机听差异比较清楚。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-header">
+        <h2>观众评论：关于第1-2集的具体讨论</h2>
+      </div>
+      <div class="comment-list">
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">夜</span><span class="comment-nick">夜战训练爱好者</span><span class="comment-time">2026-11-07</span></div>
+          <p class="comment-text">第2集通讯那47秒真的绝，通讯兵转旋钮的动作跟我以前在部队里用的电台一模一样，连报频的停顿节奏都对。公映版剪掉这段太可惜了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">C</span><span class="comment-nick">CQB考据中</span><span class="comment-time">2026-11-06</span></div>
+          <p class="comment-text">第1集切角那段第六帧的修正其实不明显，但第二帧多探3厘米之后整个动作确实顺了。动画组里有懂行的人。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">白</span><span class="comment-nick">白噪音收集者</span><span class="comment-time">2026-11-06</span></div>
+          <p class="comment-text">夜视仪噪点减少我有点意见，看起来是清楚了，但绿油油一片啥都看不清才是真实夜视仪的样子啊。不过照明弹切换回正常视野的时机确实改好了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">狙</span><span class="comment-nick">狙击手观察手</span><span class="comment-time">2026-11-05</span></div>
+          <p class="comment-text">“确认是二不是三”这句台词加得好。狙击手对通讯频道有阴影这个设定，比直接闪回讲前史高级多了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">路</span><span class="comment-nick">路过看枪的</span><span class="comment-time">2026-11-05</span></div>
+          <p class="comment-text">第1集装备室那段沉默对视我看了三遍才注意到，第一遍完全以为是普通镜头。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">M</span><span class="comment-nick">M249弹链箱</span><span class="comment-time">2026-11-04</span></div>
+          <p class="comment-text">机枪手的M249配件清单更新了，瞄具从ACOG换成了EOTech，设定集第3版才改的。第2集武器检查镜头里能看出来。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">半</span><span class="comment-nick">半截话专家</span><span class="comment-time">2026-11-04</span></div>
+          <p class="comment-text">照明弹那个光衰曲线，第二次延长到14秒有点太刻意了，为了画面好看吧。但第三次枪挂式的两秒最大亮度是对的。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">音</span><span class="comment-nick">音轨对比党</span><span class="comment-time">2026-11-03</span></div>
+          <p class="comment-text">戴耳机听第2集第6分钟，蓝光版左右声道分离确实比流媒体版明显，枪声定位更准。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">追</span><span class="comment-nick">追番不追星</span><span class="comment-time">2026-11-03</span></div>
+          <p class="comment-text">公映版第1集血迹弱化之后，队长看靶标那个镜头确实有点怪，当时还以为她走神了。现在明白了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">动</span><span class="comment-nick">动画原画迷</span><span class="comment-time">2026-11-02</span></div>
+          <p class="comment-text">11月2日那个原画分解图有人存了吗？推文好像删了，想再看一遍第六帧的修正。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">冰</span><span class="comment-nick">冰镇柚子茶</span><span class="comment-time">2026-11-01</span></div>
+          <p class="comment-text">第2集夜战那段节奏有点慢，通讯中断47秒对剧情党来说确实拖。但战术细节好看，看个人取舍吧。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">老</span><span class="comment-nick">老李看动画</span><span class="comment-time">2026-10-31</span></div>
+          <p class="comment-text">第1集第14分钟那段切角，贴墙的时候枪口指向没有明显压低，实际CQB里枪口要更朝下一点。不过整体已经比大多数动画强了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">工</span><span class="comment-nick">工厂三层结构</span><span class="comment-time">2026-10-30</span></div>
+          <p class="comment-text">美术监督说参考了川崎废弃仓库，那个三层楼的管线走向确实有现实感。第2集夜戏里照明弹打上去之后阴影方向和发射点对得上，这点很细。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">表</span><span class="comment-nick">表情包收集者</span><span class="comment-time">2026-10-29</span></div>
+          <p class="comment-text">队长那个“收到，切二”之后马上问狙击手位置，我直接笑出声。这哪是问位置，这是查岗。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head"><span class="comment-avatar">路</span><span class="comment-nick">路过的战术宅</span><span class="comment-time">2026-10-28</span></div>
+          <p class="comment-text">直播问答里监督说请继续看第4集，问题是第3集都还没出，这算不算官方挖坑。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2>相关资讯：制作动态与版本发布</h2>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-title">第2集完整分镜稿42页PDF公开</span>
+          <span class="news-date">2026-11-07</span>
+          <p class="news-summary">动画官方推特发布第2集夜战段落全部画角与运镜标注，含照明弹发射时摄影机位置示意图和照明弹三次发射的机位差异表。</p>
+        </div>
+        <div class="news-item">
+          <span class="news-title">角色设定集第3版追加机枪手配件清单</span>
+          <span class="news-date">2026-11-05</span>
+          <p class="news-summary">新增M249的瞄具型号从ACOG改为EOTech，并附弹链箱挂载方式分解图，制作组注释说明这是第2集武器检查镜头的参考设定。</p>
+        </div>
+        <div class="news-item">
+          <span class="news-title">第1集巷战片段对比视频播放量破12万</span>
+          <span class="news-date">2026-11-03</span>
+          <p class="news-summary">视频博主“战术动画考据”发布逐帧对比，重点标注两处血迹特效差异，评论区讨论集中在队长注视镜头的动机变化。</p>
+        </div>
+        <div class="news-item">
+          <span class="news-title">蓝光修正版音轨重混说明上线</span>
+          <span class="news-date">2026-10-30</span>
+          <p class="news-summary">制作组官网发布采样率从48kHz提升至96kHz的说明，附第2集第6分钟AB对比片段，建议戴耳机听左右声道分离度变化。</p>
+        </div>
+        <div class="news-item">
+          <span class="news-title">夜视仪画面调色版引发观众投票讨论</span>
+          <span class="news-date">2026-10-29</span>
+          <p class="news-summary">未删减版对第2集第8分10秒的夜视仪画面噪点减少约30%，官网上线段落人气投票后，“通讯中断47秒”以34%得票率排第一。</p>
+        </div>
+        <div class="news-item">
+          <span class="news-title">制作组直播确认蓝光修正版制作基准</span>
+          <span class="news-date">2026-10-28</span>
+          <p class="news-summary">监督在直播中确认第1-2集未删减版基于蓝光修正版制作，并回答观众关于切角动作原型和狙击手队长前史的问题，后一问题未给出明确答案。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="recommend">
+      <div class="section-header">
+        <h2>相关推荐：具体内容方向与条目</h2>
+      </div>
+      <div class="tag-cloud">
+        <a href="/#featured">HK416A5配件清单</a>
+        <a href="/#deepdive">CQB清房六步骤</a>
+        <a href="/#deepdive">M662照明弹光衰参数</a>
+        <a href="/#latest">蓝光修正版音轨对比</a>
+        <a href="/#featured">狙击手观察手配合镜头</a>
+        <a href="/#deepdive">通讯频道切换流程</a>
+        <a href="/#comments">队长与狙击手旧怨线</a>
+        <a href="/#timeline">第1-2集事件时间线</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：条目时间线 -->
+    <section class="section" id="timeline">
+      <div class="section-header">
+        <h2>第1-2集条目时间线：事件发生顺序</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-date">第1集 第0-3分钟</div>
+          <div class="tl-title">入队集合与装备检查</div>
+          <div class="tl-desc">五位队员在装备室集合，逐一检查枪械与战术背心，队长宣读考核规则。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第1集 第8分钟</div>
+          <div class="tl-title">装备室沉默对视</div>
+          <div class="tl-desc">队长与狙击手在装备架旁有23秒无台词对视，背景里其他队员在整理弹匣。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第1集 第14分22秒</div>
+          <div class="tl-title">巷战切角动作</div>
+          <div class="tl-desc">小队在模拟街区执行CQB清房，六个关键帧的切角动作完整展示。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第1集 第16分08秒</div>
+          <div class="tl-title">靶标命中与队长注视</div>
+          <div class="tl-desc">队员击中模拟靶标，红色标记出现，队长注视约1.5秒后下达继续指令。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第2集 第5分30秒</div>
+          <div class="tl-title">第一次照明弹发射</div>
+          <div class="tl-desc">小队进入废弃工厂一层，发射第一枚照明弹，燃烧约11秒后落地。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第2集 第8分10秒</div>
+          <div class="tl-title">夜视仪画面</div>
+          <div class="tl-desc">队员切换夜视仪，未删减版噪点减少30%，暗部管线走向可辨认。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第2集 第10分12秒</div>
+          <div class="tl-title">通讯中断与备用频率切换</div>
+          <div class="tl-desc">遭遇电子干扰后通讯兵切换备用频道，47秒完整流程，含狙击手额外问句。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">第2集 末尾</div>
+          <div class="tl-title">狙击手叫错队长呼号</div>
+          <div class="tl-desc">训练结束后狙击手在频道里叫错呼号，队长未纠正，为后续集数埋下伏笔。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. 投稿交流 -->
+    <section class="section" id="contribute">
+      <div class="section-header">
+        <h2>投稿交流：分享你的第1-2集解析</h2>
+      </div>
+      <div style="background:var(--surface);border-radius:var(--radius-card);padding:24px 28px;box-shadow:var(--shadow-default);">
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:14px;">
+          正在整理第1-2集的逐帧截图比对、武器配件考据或角色关系线分析？欢迎将你的解析投稿到站内交流区。投稿内容以具体条目、时间点和画面细节为主，例如“第2集第10分12秒通讯兵旋钮档位与真实电台的对应关系”或“第1集第14分22秒切角动作第六帧修正前后的对比截图”。
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;color:var(--text-secondary);margin-bottom:18px;">
+          交流区目前有37条关于第1-2集的讨论帖，其中“通讯中断段落逐帧分析”和“照明弹光衰曲线对比”两个帖子回复最多。投稿不需要完整长文，一条带时间码的观察、一张标注了具体帧号的截图、一段对角色台词的解读都可以。站内不设自动审核，所有投稿由人工查看后决定是否放入精选列表。
+        </p>
+        <a href="/#contribute" class="btn-primary" style="display:inline-block;">进入交流区</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ---------- 右辅助栏 ---------- -->
+  <aside class="sidebar-right" aria-label="辅助信息">
+    <div class="sidebar-card">
+      <h3>第1-2集热度榜</h3>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num top3">1</span><a href="/#deepdive" class="rank-title">通讯中断47秒完整流程</a></div>
+        <div class="rank-item"><span class="rank-num top3">2</span><a href="/#featured" class="rank-title">夜战照明弹使用解析</a></div>
+        <div class="rank-item"><span class="rank-num top3">3</span><a href="/#featured" class="rank-title">第1集巷战切角动作</a></div>
+        <div class="rank-item"><span class="rank-num">4</span><a href="/#comments" class="rank-title">队长与狙击手旧怨线</a></div>
+        <div class="rank-item"><span class="rank-num">5</span><a href="/#latest" class="rank-title">蓝光修正版音轨对比</a></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>更新记录</h3>
+      <div class="update-stream">
+        <div class="stream-item"><span class="stream-time">11-07</span><span>第2集分镜稿公开</span></div>
+        <div class="stream-item"><span class="stream-time">11-06</span><span>武器配置分析更新</span></div>
+        <div class="stream-item"><span class="stream-time">11-05</span><span>设定集第3版新增</span></div>
+        <div class="stream-item"><span class="stream-time">11-03</span><span>巷战对比视频发布</span></div>
+        <div class="stream-item"><span class="stream-time">10-30</span><span>音轨重混说明</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-ad">
+      <div class="ad-title">战术动画考据群</div>
+      <div class="ad-desc">第1-2集逐帧分析讨论</div>
+      <a href="/#contribute" class="ad-btn">参与交流</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ========== 页尾 ========== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">少女突击1 2集未删减版</div>
+      <p>聚焦第1集“入队考核”与第2集“夜战训练”的未删减版本差异，覆盖2026年10月28日至11月7日期间公开的分镜稿、设定集更新、音轨说明与制作组访谈。条目类型包括战术动作拆解、枪械配件考据、版本逐帧对比和角色关系线梳理。</p>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <a href="/#overview">主题概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <a href="/#comments">观众评论</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#contribute">投稿交流</a>
+    </div>
+    <div class="footer-col">
+      <h4>动态</h4>
+      <a href="/#latest">最新更新</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#timeline">条目时间线</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>页面内容基于2026年11月8日前公开信息整理，条目名与数据为示例性质。</span>
+    <span>© 2026 少女突击内容聚合站</span>
+  </div>
+</footer>
+
+<!-- ========== 回到顶部 ========== -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<!-- ========== 脚本 ========== -->
+<script>
+  (function() {
+    // 移动端菜单
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mainNav = document.getElementById('mainNav');
+    const overlay = document.getElementById('menuOverlay');
+
+    function closeMenu() {
+      mainNav.classList.remove('open');
+      overlay.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    function openMenu() {
+      mainNav.classList.add('open');
+      overlay.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        if (mainNav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
+
+    // 点击导航项后自动收起
+    mainNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 740) {
+          closeMenu();
+        }
+      });
+    });
+
+    // 键盘 Esc 关闭
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    // 回到顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 侧栏导航高亮（滚动时）
+    const sections = document.querySelectorAll('.section[id]');
+    const channelLinks = document.querySelectorAll('.channel-list a');
+
+    function highlightNav() {
+      let currentId = '';
+      sections.forEach(function(section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 140 && rect.bottom > 140) {
+          currentId = section.id;
+        }
+      });
+      channelLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '/#' + currentId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightNav);
+    window.addEventListener('load', highlightNav);
+
+    // 平滑滚动偏移处理（CSS scroll-padding-top 已设置，这里补充对旧浏览器的兼容）
+    document.querySelectorAll('a[href^="/#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').replace('/#', '');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const offset = 36 + 72; // announce + header
+          const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          history.pushState(null, null, '/' + targetId);
+        }
+      });
+    });
+  })();
+</script>
+
+<!-- WebSite 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "少女突击1 2集未删减版",
+  "description": "聚焦《少女突击》第1-2集未删减版本的战术动作、枪械考据、版本差异与角色关系分析。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<!-- FAQPage 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "第2集未删减版和公映版差多少时间？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第2集未删减版比公映版长约1分12秒，差异集中在三处：通讯中断段落多47秒、夜视仪画面停留时间多8秒、第三次照明弹后的枪口火焰残影多4帧（约0.17秒），其余为片尾字幕滚动速度差异。第1集仅多出约9秒，主要是两处血迹特效的恢复。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "少女突击第1集巷战里的切角动作是真实CQB流程吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第1集第14分22秒的切角动作参考了实际CQB训练中的“限位切角”流程：贴墙、低姿探头、缩回、换手、再探头确认、推进。动画组在10月28日直播中说明，六个关键帧中第二帧和第五帧的探头幅度做了3厘米的修正，让动作更接近真实训练录像里的节奏。但动画仍然压缩了探头后的观察时间，实际训练中每个探头需要停留2-3秒确认死角，动画里只停了不到1秒。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "夜视仪画面噪点少了是好事还是坏事？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看用途。未删减版把第2集第8分10秒至9分02秒的绿色显像管噪点减少了约30%，暗部管线走向变得可辨认，对普通观众更友好。但真实夜视仪的成像噪点比动画里多得多，减少噪点会降低写实感。制作组在蓝光修正版说明里提到，这个调整是“在可读性和真实感之间做了折中”，没有完全模拟真实设备输出。考据向观众可以对比公映版和未删减版的同一画面，看自己更接受哪种。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第1集第16分钟的血迹标记有什么叙事作用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "模拟靶标被击中后的红色标记在第16分08秒出现，随后队长有一个约1.5秒的注视镜头。公映版弱化了红色标记的饱和度，导致队长的注视显得缺乏动机。未删减版恢复原始配色后，这个镜头的意图更清楚：队长在确认队员的射击命中位置，红色标记是判断依据。这个细节连接第2集队长对队员射击习惯的点评，属于用视觉元素交代角色关系，而不是靠台词。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "狙击手和队长在第1-2集里到底是什么关系？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "已公开的信息只有几个片段：第1集第8分钟两人在装备室有23秒沉默对视；第2集通讯段落里狙击手多问了一句“确认是二不是三”；第2集末尾狙击手叫错队长呼号。未删减版保留的通讯对话暗示两人此前在另一支队伍共事过，且有过通讯相关的摩擦。制作组在直播中被问到这条线时，监督只说“请继续看第4集”，没有给出明确答案。目前所有关系推断都来自这些细节，没有官方设定集确认。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "蓝光修正版音轨和流媒体版听起来差别在哪？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "蓝光修正版音轨采样率从48kHz提升到96kHz，枪声的左右声道分离度更高。具体对比位置在第2集第6分钟：流媒体版里自动步枪连射的声音偏中置，左右声道差异不明显；蓝光版能听出射击位置在画面左侧偏后，与画面上队员的站位一致。制作组在10月30日的音轨说明里附了这段的AB对比片段，戴耳机听差异比较清楚。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+            </html>
